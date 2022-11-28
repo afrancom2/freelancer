@@ -1,16 +1,28 @@
+:root { /* Custom properties */
+    --white: #ffffff;
+    --black: #212121;
+    --orange: #FFC107;
+    --blue: #0097A7;
+    --gris: #757575;
+    --fuente-principal: 'Source Sans Pro', sans-serif;
+}
+
 html {
     font-size: 62.5%; /* Para manejar mejor los rem - 1rem = 10px */
 }
 
 body {
+    font-family: var(--fuente-principal);
     font-size: 16px; /* Para manejar mejor los rem - 1rem = 10px */
 }
 
-h1 {
+.titulo {
     text-align: center;
     font-size: 3.8rem;
+    color: var(--black); /* Uso de custom properties */
+    font-weight: 600;
 }
 
-h1 span {
+.titulo span { /* Selector el padre va primero y despues el hijo */
     font-size: 2rem;
 }
