@@ -3,8 +3,8 @@
     --black: #212121;
     --orange: #FFC107;
     --blue: #0097A7;
-    --gris: #757575;
-    --fuente-principal: 'Source Sans Pro', sans-serif;
+    --gray: #757575;
+    --font-main: 'Source Sans Pro', sans-serif;
 }
 
 html {
@@ -12,17 +12,61 @@ html {
 }
 
 body {
-    font-family: var(--fuente-principal);
+    font-family: var(--font-main);
     font-size: 16px; /* Para manejar mejor los rem - 1rem = 10px */
 }
 
-.titulo {
+.title {
     text-align: center;
     font-size: 3.8rem;
     color: var(--black); /* Uso de custom properties */
     font-weight: 600;
 }
 
-.titulo span { /* Selector el padre va primero y despues el hijo */
+.title span { /* Selector el padre va primero y despues el hijo */
     font-size: 2rem;
+}
+
+.container {
+    max-width: 120rem; /* toma 120 rem como maximo si se tiene el espacio disponible */
+    margin: auto; /* margin sirve para agregar separación entre los elementos */
+}
+
+.nav-main-bg {
+    background-color: var(--blue);
+}
+
+.nav-main {
+    display: flex;
+    /* Para aplicar flexbox necesito aplicarlo en el elemento padre, en este caso como
+       queremos aplicarlo en los ahref nos posicionamos aca en el nav-main
+       Flex es para una dimensión, tanto fila como columna, con grid es una grilla o matriz */
+    flex-direction: column; /* Definir la orientación de la columna o fila por defecto es row */
+    align-items: center;
+}
+
+/* 480px telefono
+   768px tablet
+   1140px pc
+   1400px pc extendida */
+@media (min-width: 768px) {
+    /* Se va a ejecutar cuando la resolución maxima sea de 768px: Aplicará solo desde 0px hasta 768px
+       con min-width: Aplicará a partir desde los 768px hacia adelante */
+    .nav-main {
+        flex-direction: row;
+        justify-content: space-evenly; /* Permite distribuir el contenido horizontalmente */
+    }
+}
+
+.nav-main a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem; /* Es desde la separación del elemento hacia adentro, de afuera hacia adentro */
+}
+
+.nav-main a:hover { /* son subclases del elemento, en este caso el elemento a href */
+    background-color: var(--orange);
+    color: var(--black);
 }
