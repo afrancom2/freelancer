@@ -9,6 +9,11 @@
 
 html {
     font-size: 62.5%; /* Para manejar mejor los rem - 1rem = 10px */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after { /* Para colocarlo en todos los elementos se utiliza el asterisco */
+    box-sizing: inherit;
 }
 
 body {
@@ -59,6 +64,7 @@ body {
 }
 
 .nav-main a {
+    display: block;
     color: var(--white);
     text-decoration: none;
     font-size: 2rem;
@@ -70,3 +76,14 @@ body {
     background-color: var(--orange);
     color: var(--black);
 }
+
+.section-info {
+    background-image: url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-info__container {
+
+}
+
