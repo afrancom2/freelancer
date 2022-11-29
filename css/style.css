@@ -4,6 +4,7 @@
     --orange: #FFC107;
     --blue: #0097A7;
     --gray: #757575;
+    --ligth-gray: #DFE9F3;
     --font-main: 'Source Sans Pro', sans-serif;
 }
 
@@ -19,17 +20,52 @@ html {
 body {
     font-family: var(--font-main);
     font-size: 16px; /* Para manejar mejor los rem - 1rem = 10px */
+    background-image: linear-gradient(to top, var(--ligth-gray) 0%, var(--white) 100%);
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
 }
 
 .title {
-    text-align: center;
-    font-size: 3.8rem;
     color: var(--black); /* Uso de custom properties */
     font-weight: 600;
 }
 
 .title span { /* Selector el padre va primero y despues el hijo */
     font-size: 2rem;
+}
+
+.button {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase; /* Texto en mayusculas */
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .button {
+        width: auto;
+    }
 }
 
 .container {
@@ -81,9 +117,30 @@ body {
     background-image: url(../img/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 400px;
+    position: relative;
+}
+
+.section-info__container > * {
+    color: var(--white);
 }
 
 .section-info__container {
-
+    position: absolute;
+    background-color: rgba( 0, 0, 0, .7); /* acá se evidencia la transparencia Anterior */
+    background-color: rgb( 0 0 0 / 70% );
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Cuando este flex direction row por defecto, se alinea al centro de la pantalla  horizontal con justify content y con align items se centra al medio vertical
+        */
+}
+.ubication {
+    display: flex;
+    flex-direction: row;
+    align-items: inherit;
 }
 
