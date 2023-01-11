@@ -155,3 +155,37 @@ h1, h2, h3 {
     align-items: inherit;
 }
 
+@media (min-width: 768px) {
+    .services {
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%; /* Se crean 3 columnas del 33.3 porciento del tamano del contenedor*/
+        /*grid-template-columns: repeat(3, 1fr); Esta sintaxis es la misma que arriba 1fr es una fraccion en este caso 3 fracciones */
+        column-gap: 1rem; /* para realizar una separacion de 10px entre columnas */
+    }
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service h3 {
+    color: var(--blue);
+}
+
+.service p {
+    line-height: 2rem;
+    text-align: center;
+}
+
+.service .icon {
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
