@@ -112,29 +112,35 @@
         <h2>Contacto</h2>
         <form class="form">
             <fieldset>
-                <legend>Contactame llenando todos los campos</legend>
-                <div>
-                    <label for="name">Nombre</label>
-                    <input type="text" placeholder="Nombre">
+                <legend class="form-legend">Contactame llenando todos los campos</legend>
+                <div class="form-container-fields">
+                    <div class="form-fields">
+                        <div class="form-field">
+                            <label for="name">Nombre</label>
+                            <input  class="form-field-input-text" type="text" placeholder="Nombre">
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Teléfono</label>
+                            <input  class="form-field-input-text" type="tel" placeholder="Teléfono">
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input  class="form-field-input-text" type="email" placeholder="Email">
+                    </div>
+                    <div class="form-field">
+                        <label for="name">Mensaje</label>
+                        <textarea class="form-field-input-text"></textarea>
+                    </div>
                 </div>
-                <div>
-                    <label for="phone">Teléfono</label>
-                    <input type="tel" placeholder="Teléfono">
+                <div class="form-button-div">
+                    <input class="button" type="submit" value="Enviar">
                 </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" placeholder="Email">
-                </div>
-                <div>
-                    <label for="name">Mensaje</label>
-                    <textarea></textarea>
-                </div>
-                <input type="submit" value="Enviar">
             </fieldset>
         </form>
     </section>
 </main>
-<footer>
+<footer class="footer">
     <p>Todos los derechos reservados. Andrés Franco - Desarrollador Full Stack</p>
 </footer>
 </body>
