@@ -4,7 +4,7 @@
     --orange: #FFC107;
     --blue: #0097A7;
     --gray: #757575;
-    --ligth-gray: #DFE9F3;
+    --ligth-gray: #B0DEFAFF;
     --font-main: 'Source Sans Pro', sans-serif;
 }
 
@@ -21,6 +21,15 @@ body {
     font-family: var(--font-main);
     font-size: 16px; /* Para manejar mejor los rem - 1rem = 10px */
     background-image: linear-gradient(to top, var(--ligth-gray) 0%, var(--white) 100%);
+}
+
+.shade {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(125, 110, 125, 1);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(125, 110, 125, 1);
+    box-shadow: 0px 5px 5px 0px rgba(125, 110, 125, 1);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 2rem;
 }
 
 h1 {
@@ -58,8 +67,13 @@ h1, h2, h3 {
     text-transform: uppercase; /* Texto en mayusculas */
     font-weight: bold;
     border-radius: .5rem;
+    border: none;
     width: 90%;
     text-align: center;
+}
+
+.button:hover {
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -82,9 +96,9 @@ h1, h2, h3 {
     /* Para aplicar flexbox necesito aplicarlo en el elemento padre, en este caso como
        queremos aplicarlo en los ahref nos posicionamos aca en el nav-main
        Flex es para una dimensión, tanto fila como columna, con grid es una grilla o matriz */
-    flex-direction: column; /* Definir la orientación de la columna o fila por defecto es row */
+    flex-direction: column; /*Definir la orientación de la columna o fila por defecto es row */
     align-items: center;
-}
+}+
 
 /* 480px telefono
    768px tablet
@@ -95,12 +109,13 @@ h1, h2, h3 {
        con min-width: Aplicará a partir desde los 768px hacia adelante */
     .nav-main {
         flex-direction: row;
-        justify-content: space-evenly; /* Permite distribuir el contenido horizontalmente */
+        justify-content: space-between; /* Permite distribuir el contenido horizontalmente */
     }
 }
 
 .nav-main a {
     display: block;
+    text-align: center;
     color: var(--white);
     text-decoration: none;
     font-size: 2rem;
@@ -119,6 +134,7 @@ h1, h2, h3 {
     background-size: cover;
     height: 400px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .section-info__container > * {
@@ -127,8 +143,8 @@ h1, h2, h3 {
 
 .section-info__container {
     position: absolute;
-    background-color: rgba( 0, 0, 0, .7); /* acá se evidencia la transparencia Anterior */
-    background-color: rgb( 0 0 0 / 70% );
+    background-color: rgba(0, 0, 0, .7); /* acá se evidencia la transparencia Anterior */
+    background-color: rgb(0 0 0 / 70%);
     width: 100%;
     height: 100%;
     display: flex;
@@ -138,10 +154,128 @@ h1, h2, h3 {
     /* Cuando este flex direction row por defecto, se alinea al centro de la pantalla  horizontal con justify content y con align items se centra al medio vertical
         */
 }
+
 .ubication {
     display: flex;
     flex-direction: row;
     align-items: inherit;
 }
 
+@media (min-width: 768px) {
+    .services {
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%; /* Se crean 3 columnas del 33.3 porciento del tamano del contenedor*/
+        /*grid-template-columns: repeat(3, 1fr); Esta sintaxis es la misma que arriba 1fr es una fraccion en este caso 3 fracciones */
+        column-gap: 1rem; /* para realizar una separacion de 10px entre columnas */
+    }
+}
 
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service h3 {
+    color: var(--blue);
+}
+
+.service p {
+    line-height: 2rem;
+    text-align: center;
+}
+
+.service .icon {
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: var(--gray);
+    width: min(60rem, 100%); /* Utiliza el valor mas pequeño entre 60rem o 100% */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.form fieldset {
+    border: none;
+}
+
+.form-legend {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--orange);
+}
+
+@media (min-width: 768px) {
+    .form-container-fields {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+
+    .form-field:nth-child(3),
+    .form-field:nth-child(4) {
+        grid-column: 1 / 3;
+    }
+}
+
+.form-field {
+    margin-bottom: 1rem;
+}
+
+.form-field label {
+    color: var(--white);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+/*.form-field label[type = "text"] {} */ /* Esta es una forma de seleccionar los inputs que sean solo de tipo text*/
+
+.form-field-input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.form-field textarea {
+    height: 16rem;
+}
+
+.form-field-input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.footer {
+    text-align: center;
+}
+
+.form-button-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-button-div .button {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .form-button-div .button {
+        width: auto;
+    }
+}
